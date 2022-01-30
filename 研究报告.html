@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>撰写研究报告</title>
+        <script type="text/javascript">
+        var dx=15
+        function back(){
+           //获取 输入框的值
+           var b=document.getElementById("cmd").value;
+           if(b=="help/"){
+            document.getElementById('subjec').placeholder="命令行帮助:插入输入框add input;插入图片add image";
+           }
+           if(b=="about/"){
+            document.getElementById('subjec').placeholder="这是一个免费的论文编排系统，更多请关注https://space.bilibili.com/1088931406?spm_id_from=333.788.0.0" ;
+           }
+           if(b=="takaki/"){
+            document.getElementById('subjec').style="border: 2px solid rgb(255, 0, 0)"
+            document.getElementById('subjec').placeholder="Error:404 not found" ;
+           }
+        }
+        </script>
+    </head>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            input[type=text], select, textarea {
+              width: 100%;
+              padding: 12px;
+              border: 1.25px solid rgb(119, 0, 255);
+              border-radius: 4px;
+              resize: vertical;
+            }
+            
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            
+            input[type=submit] {
+              background-color: #1d1c1c;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              float: right;
+            }
+            
+            input[type=submit]:hover {
+              background-color: #0f0213;
+            }
+            
+            .container {
+              border-radius: 5px;
+              background-color: #ffffff;
+              padding: 20px;
+            }
+            
+            .col-25 {
+              float: left;
+              width: 10%;
+              margin-top: 6px;
+              margin-left:15%;
+            }
+            
+            .col-75 {
+              float: left;
+              width: 75%;
+              margin-top: 1px;
+            }
+            
+            /* 清除浮动 */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+             
+            /* 响应式布局 layout - 在屏幕宽度小于 600px 时， 设置为上下堆叠元素 */
+            @media screen and (max-width: 600px) {
+              .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+              }
+            }
+            p{
+              color:rgb(74, 9, 136);
+              margin-left:15%;
+            }
+            h2{
+              margin-left:15%;
+            }
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 8%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            color: rgb(0, 0, 0);
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #984caf;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: rgb(43, 1, 56);
+            color: white;
+        }
+            </style>
+            <body>
+              <ul>
+                <li><a class="active" href="#home">工作页</a></li>
+                <li><a href="#news">反馈</a></li>
+                <li><a href="#contact">帮助</a></li>
+                <li><a href="#about">关于</a></li>
+              </ul>
+                <h2>研究报告</h2>
+<p>用于方便填写报告。命令行操作帮助请输入help/</p>
+
+<div class="container">
+  <form>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">命令行</label> 
+    </div>
+    <div class="col-75">
+      <input type="text" id="cmd" name="firstname" style="width: 75%;border: 1px solid rgb(53, 52, 52);" placeholder="键入命令">
+      <input type="submit" style="left: auto;" onclick="back()" value="提交">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">报告标题</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="title">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">主作者</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="作者">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">创作团队</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="团队名+人员名单+提问者">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">类型</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="australia">电子科技</option>
+        <option value="canada">数学理工</option>
+        <option value="usa">人文社会经济</option>
+        <option value="usa">军事</option>
+        <option value="usa">医学生理学</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">正文</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="报告" style="height:500px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="保存提交">
+  </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-25">
+    <label for="subject">终端</label>
+  </div>
+  <div class="col-75">
+    <textarea id="subjec" name="subject"  style="height:200px;width:75%;border: 1px solid rgb(29, 27, 27);" readonly="readonly"></textarea>
+  </div>
+</div>
+<p>测试中，反馈请到邮箱bcm-smr@qq.com
+  然后请多多支持
+</p>
+
+            </body>
+</html>
